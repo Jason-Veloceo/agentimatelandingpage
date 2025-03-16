@@ -14,7 +14,9 @@
     "lib"
   ],
   "scripts": {
-    "build": "node build"
+    "build": "npm run build-original && npm run create-public",
+    "build-original": "node build",
+    "create-public": "mkdir -p public && cp -r dist/* public/ || cp -r build/* public/ || echo 'Please manually copy your build output to public/'"
   },
   "bugs": {
     "url": "https://github.com/juliangarnier/anime/issues"
